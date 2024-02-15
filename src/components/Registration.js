@@ -24,7 +24,7 @@ const Registration = () => {
       password,
     };
     const response = await axios.post(
-      "http://localhost:3030/registration",
+      "http://45.146.165.118:3030/registration",
       dataUser
     );
     if (response.data.message === false) {

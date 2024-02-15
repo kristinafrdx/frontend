@@ -20,7 +20,7 @@ const Login = () => {
       login,
       password,
     }
-    const response = await axios.post('http://localhost:3030/login', dat);
+    const response = await axios.post('http://45.146.165.118:3030/login', dat);
     if (response.data.message === 'OK') {
       setLogged(true)
       navigate('/table', {state: {username: login}})

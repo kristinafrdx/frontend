@@ -16,7 +16,7 @@ const Table = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3030/users");
+      const response = await axios.get("http://45.146.165.118:3030/users");
       setUsers(response.data.reverse());
     };
     fetchData();
@@ -45,13 +45,13 @@ const Table = () => {
   const handleDelete = async () => {
     if (selectedUsers.length > 0) {
       if (selectCurrent) {
-        await axios.post("http://localhost:3030/table/delete", selectedUsers);
-        const updateUsers = await axios.get("http://localhost:3030/users");
+        await axios.post("http://45.146.165.118:3030/table/delete", selectedUsers);
+        const updateUsers = await axios.get("http://45.146.165.118:3030/users");
         setUsers(updateUsers.data.reverse());
         navigate('/login');
       } else {
-        await axios.post("http://localhost:3030/table/delete", selectedUsers);
-        const updateUsers = await axios.get("http://localhost:3030/users");
+        await axios.post("http://45.146.165.118:3030/table/delete", selectedUsers);
+        const updateUsers = await axios.get("http://45.146.165.118:3030/users");
         setUsers(updateUsers.data.reverse());
       }
     } else {
@@ -63,13 +63,13 @@ const Table = () => {
     if (selectedUsers.length > 0) {
       console.log(selectCurrent)
       if (selectCurrent) {
-        await axios.post("http://localhost:3030/table/block", selectedUsers);
-        const updateUsers = await axios.get("http://localhost:3030/users");
+        await axios.post("http://45.146.165.118:3030/table/block", selectedUsers);
+        const updateUsers = await axios.get("http://45.146.165.118:3030/users");
         setUsers(updateUsers.data.reverse());
         navigate('/login');
       } else {
-        await axios.post("http://localhost:3030/table/block", selectedUsers);
-        const updateUsers = await axios.get("http://localhost:3030/users");
+        await axios.post("http://45.146.165.118:3030/table/block", selectedUsers);
+        const updateUsers = await axios.get("http://45.146.165.118:3030/users");
         setUsers(updateUsers.data.reverse());
       }
     } else {
@@ -79,8 +79,8 @@ const Table = () => {
 
   const unLockUser = async () => {
     if (selectedUsers.length > 0) {
-      await axios.post("http://localhost:3030/table/unlock", selectedUsers);
-      const updateUsers = await axios.get("http://localhost:3030/users");
+      await axios.post("http://45.146.165.118:3030/table/unlock", selectedUsers);
+      const updateUsers = await axios.get("http://45.146.165.118:3030/users");
       setUsers(updateUsers.data.reverse());
     } else {
       setError(true);
